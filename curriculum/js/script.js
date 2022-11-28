@@ -1,6 +1,6 @@
 "use strict";
 
-// Задание1. Golf Code
+//Golf Code
 
 const names = [
   "Hole-in-one!",
