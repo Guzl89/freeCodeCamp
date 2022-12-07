@@ -210,46 +210,76 @@ legs, tails and friends.You can set these object properties to whatever values y
 as name is a string, legs and tails are numbers, and friends is an array*/
 
 const myDog = {
-"name": "Karl",
-"legs": 4,
-"tails": 1,
-"friends": [10]
+  name: "Karl",
+  legs: 4,
+  tails: 1,
+  friends: [10],
 };
 
 //Accessing Object Properties with Dot Notation
 const testObj = {
-  "hat": "ballcap",
-  "shirt": "jersey",
-  "shoes": "cleats"
+  hat: "ballcap",
+  shirt: "jersey",
+  shoes: "cleats",
 };
-const hatValue = testObj.hat;     
-const shirtValue = testObj.shirt;   
+const hatValue = testObj.hat;
+const shirtValue = testObj.shirt;
 
 //Accessing Object Properties with Bracket Notation
 const testObj1 = {
   "an entree": "hamburger",
   "my side": "veggies",
-  "the drink": "water"
+  "the drink": "water",
 };
-const entreeValue = testObj1["an entree"];  
-const drinkValue = testObj1["the drink"];  
+const entreeValue = testObj1["an entree"];
+const drinkValue = testObj1["the drink"];
 
 //Accessing Object Properties with Variables
 const testObj2 = {
   12: "Namath",
   16: "Montana",
-  19: "Unitas"
+  19: "Unitas",
 };
-const playerNumber = 16; 
-const player = testObj2[playerNumber];   
+const playerNumber = 16;
+const player = testObj2[playerNumber];
 console.log(player);
 
 //Add New Properties to a JavaScript Object
 const myDog1 = {
-  "name": "Happy Coder",
-  "legs": 4,
-  "tails": 1,
-  "friends": ["freeCodeCamp Campers"]
+  name: "Happy Coder",
+  legs: 4,
+  tails: 1,
+  friends: ["freeCodeCamp Campers"],
 };
 myDog1.bark = "woof";
 
+//Testing Objects for Properties
+function checkObj(obj, checkProp) {
+  var myObj = {
+    gift: "pony",
+    pet: "kitten",
+    bed: "sleigh",
+    city: "Seattle",
+  };
+
+  return obj.hasOwnProperty(checkProp) ? myObj[checkProp] : "Not Found";
+}
+
+//Using Objects for Lookups
+function phoneticLookup(val) {
+  let result = "";
+
+  // Only change code below this line
+  var lookup = {
+    "alpha": "Adams",
+    "bravo": "Boston",
+    "charlie": "Chicago",
+    "delta": "Denver",
+    "echo": "Easy",
+    "foxtrot": "Frank"
+  };
+  result = lookup[val];
+   
+  return result;
+}
+console.log(phoneticLookup("charlie"));
