@@ -271,55 +271,48 @@ function phoneticLookup(val) {
 
   // Only change code below this line
   var lookup = {
-    "alpha": "Adams",
-    "bravo": "Boston",
-    "charlie": "Chicago",
-    "delta": "Denver",
-    "echo": "Easy",
-    "foxtrot": "Frank"
+    alpha: "Adams",
+    bravo: "Boston",
+    charlie: "Chicago",
+    delta: "Denver",
+    echo: "Easy",
+    foxtrot: "Frank",
   };
   result = lookup[val];
-   
+
   return result;
 }
 console.log(phoneticLookup("charlie"));
 
 //Manipulating Complex Objects
-  
+
 const myMusic = [
   {
     "artist": "Billy Joel",
     "title": "Piano Man",
     "release_year": 1973,
-    "formats": [
-      "CD",
-      "8T",
-      "LP"
-    ],
-    "gold": true
+    "formats": ["CD", "8T", "LP"],
+    "gold": true,
   },
   {
-    "artist": "Bill Evans",
+   "artist": "Bill Evans",
     "title": "Alone",
     "release_year": 1968,
-    "formats": [
-      "8T",
-      "LP"
-    ],
-  }
+    "formats": ["8T", "LP"],
+  },
 ];
- 
- //Accessing Nested Objects
+
+//Accessing Nested Objects
 const myStorage = {
   "car": {
     "inside": {
       "glove box": "maps",
-      "passenger seat": "crumbs"
-     },
+      "passenger seat": "crumbs",
+    },
     "outside": {
-      "trunk": "jack"
-    }
-  }
+      "trunk": "jack",
+    },
+  },
 };
 var gloveBoxContents = myStorage.car.inside["glove box"];
 console.log(gloveBoxContents);
@@ -330,20 +323,12 @@ console.log(gloveBoxContents);
 const myPlants = [
   {
     type: "flowers",
-    list: [
-      "rose",
-      "tulip",
-      "dandelion"
-    ]
+    list: ["rose", "tulip", "dandelion"],
   },
   {
     type: "trees",
-    list: [
-      "fir",
-      "pine",
-      "birch"
-    ]
-  }
+    list: ["fir", "pine", "birch"],
+  },
 ];
 const secondTree = myPlants[1].list[1];
 console.log(secondTree);
@@ -352,23 +337,22 @@ console.log(secondTree);
 
 const recordCollection = {
   2548: {
-    albumTitle: 'Slippery When Wet',
-    artist: 'Bon Jovi',
-    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+    albumTitle: "Slippery When Wet",
+    artist: "Bon Jovi",
+    tracks: ["Let It Rock", "You Give Love a Bad Name"],
   },
   2468: {
-    albumTitle: '1999',
-    artist: 'Prince',
-    tracks: ['1999', 'Little Red Corvette']
+    albumTitle: "1999",
+    artist: "Prince",
+    tracks: ["1999", "Little Red Corvette"],
   },
   1245: {
-    artist: 'Robert Palmer',
-    tracks: []
+    artist: "Robert Palmer",
+    tracks: [],
   },
   5439: {
-    albumTitle: 'ABBA Gold'
-    
-  }
+    albumTitle: "ABBA Gold",
+  },
 };
 
 function updateRecords(records, id, prop, value) {
@@ -382,24 +366,82 @@ function updateRecords(records, id, prop, value) {
   }
   return records;
 }
-updateRecords(recordCollection, 5439, 'artist', "ABBA");
+updateRecords(recordCollection, 5439, "artist", "ABBA");
 
 //Iterate with JavaScript While Loops
 //version1
 const myArray1 = [];
 var i = 5;
 while (i > -1) {
-    myArray1.push(i);
-    i--;
- }
- console.log(myArray1);
+  myArray1.push(i);
+  i--;
+}
+console.log(myArray1);
 
 //version2
- const myArray = [];
- var i = 0;
-  while (i < 6) {
-    myArray.push(i);
-    i++;
+const myArray = [];
+var i = 0;
+while (i < 6) {
+  myArray.push(i);
+  i++;
+}
+myArray.reverse();
+console.log(myArray);
+
+//Iterate with JavaScript For Loops
+const myArray2 = [];
+for (let i = 1; i < 6; i++) {
+  myArray2.push(i);
+}
+ 
+//Iterate Odd Numbers With a For Loop
+const myArray3 = [];
+for (let i = 1; i < 10; i +=2) {
+  myArray3.push(i);
+}
+//Count Backwards With a For Loop
+const myArray4 = [];
+for (let i = 9; i > 0; i -=2) {
+  myArray4.push(i);
+}
+console.log(myArray);
+
+//Iterate Through an Array with a For Loop
+const myArr = [2, 3, 4, 5, 6];
+let total = 0;
+
+for (let i = 0; i < myArr.length; i++) {
+  total += myArr[i];
+  console.log(total);
+}
+//Nesting For Loops
+function multiplyAll(arr) {
+  let product = 1;
+for (let i = 0; i < arr.length; i++) {
+  for (let j = 0; j < arr[i].length; j++) {
+    product *= arr[i][j];
+    console.log(arr[i][j]);
   }
-  myArray.reverse();
-  console.log(myArray);
+}
+return product;
+}
+multiplyAll([[1, 2], [3, 4], [5, 6, 7]]);
+
+//Iterate with JavaScript Do...While Loops
+const myArray5 = [];
+let i = 10;
+
+do {
+  myArray5.push(i);
+  i++;
+} while (i < 5);
+console.log(i, myArray5);
+
+//Write a recursive function, sum(arr, n), that returns the sum of the first n elements of an array arr.
+function sum(arr, n) {
+if (n <= 0) {
+  return 0;
+}else {
+    return sum(arr, n - 1) + arr[n - 1];
+ }
+} 
